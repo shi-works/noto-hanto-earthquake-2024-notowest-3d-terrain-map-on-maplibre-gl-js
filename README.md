@@ -6,7 +6,7 @@ https://shi-works.github.io/noto-hanto-earthquake-2024-notowest-3d-terrain-map-o
 
 ## Data Source
 ### 石川県
-- 令和6年能登半島地震 能登東部微地形表現図データ（発災前）
+- 令和6年能登半島地震 能登東部・赤色立体地図（発災前）
     - 出典：https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo
     - 概要：G空間情報センターにて公開されている、石川県提供の[令和6年能登半島地震 能登西部微地形表現図データ（発災前）](https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo)をラスタータイル化したデータです。
     - タイルURL：https://xs489works.xsrv.jp/raster-tiles/pref-ishikawa/notowest-red-tiles/{z}/{x}/{y}.png (ズームレベル10～18）
