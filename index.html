@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>令和6年能登半島地震 能登西部3D地形マップ（赤色立体地図）</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/pmtiles@2.11.0/dist/index.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script type="module">
+        // Terrain-RGB形式への変換モジュール
+        maplibregl.addProtocol('numpng', makeNumPngProtocol());
+        import { makeNumPngProtocol } from './numPngProtocol.js'
+
+        // addProtocolの設定
+        let protocol = new pmtiles.Protocol();
+        maplibregl.addProtocol("pmtiles", protocol.tile);
+
+        // マップの初期化
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: 'std.json',
+            center: [137.26931, 37.47772],
+            zoom: 12.26,
+            minZoom: 1,
+            maxZoom: 23,
+            pitch: 0,
+            maxPitch: 85,
+            bearing: 0,
+            hash: true,
+            attributionControl: false
+        });
+
+        // ズーム・回転
+        map.addControl(new maplibregl.NavigationControl(), 'top-left');
+
+        // フルスクリーンモードのオンオフ
+        map.addControl(new maplibregl.FullscreenControl(), 'top-left');
+
+        // 現在位置表示
+        map.addControl(new maplibregl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: false
+            },
+            fitBoundsOptions: { maxZoom: 18 },
+            trackUserLocation: true,
+            showUserLocation: true
+        }), 'top-left');
+
+        // スケール表示
+        map.addControl(new maplibregl.ScaleControl({
+            maxWidth: 200,
+            unit: 'metric'
+        }));
+
+        // Attributionを折りたたみ表示
+        map.addControl(new maplibregl.AttributionControl({
+            compact: true,
+            customAttribution: '（<a href="https://twitter.com/shi__works" target="_blank">Twitter</a> | <a href="https://github.com/shi-works/noto-hanto-earthquake-2024-notoeast-3d-terrain-map-on-maplibre-gl-js" target="_blank">Github</a>）'
+        }));
+
+        // 3D地形コントロール
+        map.addControl(
+            new maplibregl.TerrainControl({
+                source: 'aist-dem',
+                exaggeration: 1 // 標高を強調する倍率
+            }), 'top-left'
+        );
+
+        map.on('load', function () {
+            // 産総研 シームレス標高タイルソース
+            map.addSource("aist-dem", {
+                type: 'raster-dem',
+                tiles: [
+                    'numpng://tiles.gsj.jp/tiles/elev/mixed/{z}/{y}/{x}.png',
+                ],
+                attribution: '<a href="https://tiles.gsj.jp/tiles/elev/tiles.html" target="_blank">産業技術総合研究所 シームレス標高タイル(統合DEM)</a>',
+                tileSize: 256
+            });
+
+            // 産総研 シームレス標高タイルセット
+            map.setTerrain({ 'source': 'aist-dem', 'exaggeration': 1 });
+
+        });
+    </script>
+</body>
+
+</html>
