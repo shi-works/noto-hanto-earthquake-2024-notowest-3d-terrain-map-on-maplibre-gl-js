@@ -2,6 +2,7 @@
 能登西部の赤色立体地図（0.5m）と産総研のシームレス標高タイルをもとに、MapLibre GL JSで能登西部3D地形マップを表示するデモサイトです。
 
 ## Public Website
+https://shi-works.github.io/noto-hanto-earthquake-2024-notowest-3d-terrain-map-on-maplibre-gl-js/
 
 ## Data Source
 ### 石川県
