@@ -27,7 +27,7 @@
 			"tiles": [
 				"https://xs489works.xsrv.jp/raster-tiles/pref-ishikawa/notowest-red-tiles/{z}/{x}/{y}.png"
 			],
-			"attribution": "<a href='https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo' target='_blank'>令和6年能登半島地震 能登西部微地形表現図データ（発災前）</a>"
+			"attribution": "<a href='https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo' target='_blank'>令和6年能登半島地震 能登西部微地形表現図データ（発災前）を加工して作成</a>"
 		}
 	},
 	"layers": [
