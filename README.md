@@ -15,6 +15,7 @@ https://shi-works.github.io/noto-hanto-earthquake-2024-notowest-3d-terrain-map-o
     - 概要：G空間情報センターにて公開されている、石川県提供の[令和6年能登半島地震 能登西部微地形表現図データ（発災前）](https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo)をラスタータイル化したデータです。
     - ズームレベル：10～18
     - タイルサイズ：256x256ピクセル
+    - ライセンス：原初データのライセンスに従います。
 
 ### 産業技術総合研究所
 - シームレス標高タイル（統合DEM）
