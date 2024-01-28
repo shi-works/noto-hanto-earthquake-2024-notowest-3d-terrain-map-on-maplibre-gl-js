@@ -9,7 +9,7 @@ https://shi-works.github.io/noto-hanto-earthquake-2024-notowest-3d-terrain-map-o
 - 令和6年能登半島地震 能登東部・赤色立体地図（発災前）
     - 出典（タイルURL）：https://xs489works.xsrv.jp/raster-tiles/pref-ishikawa/notowest-red-tiles/{z}/{x}/{y}.png
       - 原初データ出典：https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo
-        - 概要：赤色立体地図はアジア航測株式会社の特許（第3670274号等）を使用して作成したものです。[アジア航測株式会社の許諾条件](https://www.rrim.jp/researcher/)を確認してください。
+        - 概要：赤色立体地図はアジア航測株式会社の特許（第3670274号等）を使用して作成したものです。赤色立体地図を利用される場合は、[アジア航測株式会社の許諾条件](https://www.rrim.jp/researcher/)を確認してご利用ください。
         - ライセンス：申請不要で利用できますが、商用利用することはできません。[利用規約](https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo/resource/e4b926f4-3e94-48b2-afb0-92e94830516e)参照。
         - 備考：この成果品は、石川県が作成した測量成果を、石川県知事の承認を得て複製したものである。承認番号 森管第１９７７号（令和５年度）
     - 概要：G空間情報センターにて公開されている、石川県提供の[令和6年能登半島地震 能登西部微地形表現図データ（発災前）](https://www.geospatial.jp/ckan/dataset/2024-notowest-mtopo)をWebメルカトル（EPSG:3857）に再投影した上で[gdal2tiles](https://gdal.org/programs/gdal2tiles.html)を使用してラスタータイル化したデータです。
